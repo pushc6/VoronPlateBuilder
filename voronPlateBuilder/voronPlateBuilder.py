@@ -1,4 +1,5 @@
 import os
+import urwid
 # This is a sample Python script.
 
 # Press ⌃R to execute it or replace it with your code.
@@ -21,7 +22,7 @@ def pull_repos():
 
 
 def read_repos_from_file():
-    f = open("repos.txt")
+    f = open("../repos.txt")
     try:
         global repos
         repos = f.readlines()
@@ -43,6 +44,12 @@ def checkout_repos():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+
+    txt = urwid.Text(u"Hello World")
+    fill = urwid.Filler(txt, 'top')
+    loop = urwid.MainLoop(fill)
+    loop.run()
+
     get_menu()
     choice = input("Enter your choice [1-2]:")
 
